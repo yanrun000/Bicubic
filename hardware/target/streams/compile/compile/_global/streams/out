@@ -1,7 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/workspace/JCS/Bicubic/hardware/src/main/scala/coefficient_compute.scala:82:18: method execute in object Driver is deprecated (since 3.2.2): Use chisel3.stage.ChiselStage.execute. This will be removed in 3.4.[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/workspace/JCS/Bicubic/hardware/src/main/scala/coefficient_compute.scala:100:18: method execute in object Driver is deprecated (since 3.2.2): Use chisel3.stage.ChiselStage.execute. This will be removed in 3.4.[0m
 [0m[[0m[33mwarn[0m] [0m[0m  chisel3.Driver.execute(args, () => new coefficient_compute_spline())[0m
 [0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/workspace/JCS/Bicubic/hardware/src/main/scala/coefficient_compute.scala:82:11: object Driver in package chisel3 is deprecated (since 3.2.4): Please switch to chisel3.stage.ChiselStage[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/workspace/JCS/Bicubic/hardware/src/main/scala/coefficient_compute.scala:100:11: object Driver in package chisel3 is deprecated (since 3.2.4): Please switch to chisel3.stage.ChiselStage[0m
 [0m[[0m[33mwarn[0m] [0m[0m  chisel3.Driver.execute(args, () => new coefficient_compute_spline())[0m
 [0m[[0m[33mwarn[0m] [0m[0m          ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mthere were 139 feature warnings; re-run with -feature for details[0m

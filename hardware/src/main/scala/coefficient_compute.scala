@@ -28,8 +28,8 @@ class coefficient_compute_spline extends Module{
         val pix_14 = Input(UInt(8.W))
         val pix_15 = Input(UInt(8.W))
 //这里暂定32位，到时候再说，可能16位就够用了
-        val coefficient_0   = Output(UInt(32.W))
-        val coefficient_1   = Output(UInt(32.W))
+        val coefficient_0   = Output(SInt(32.W))
+        val coefficient_1   = Output(SInt(32.W))
         val coefficient_2   = Output(SInt(32.W))
         val coefficient_3   = Output(SInt(32.W))
         val coefficient_4   = Output(SInt(32.W))
@@ -44,39 +44,63 @@ class coefficient_compute_spline extends Module{
         val coefficient_13 = Output(SInt(32.W))
         val coefficient_14 = Output(SInt(32.W))
         val coefficient_15 = Output(SInt(32.W))
+
+
+        // val test_in_U                      = Input(UInt(5.W))
+        // val test_in_S                       = Input(SInt(5.W))
+
+        // val test_out_U_U             = Output(UInt(5.W))
+        // val test_out_U_S              = Output(SInt(5.W))
+
+        // val test_out_S_U             = Output(UInt(5.W))
+        // val test_out_S_S              = Output(SInt(5.W))
+
     })
 
-    io.coefficient_0    :=   (io.pix_5* 16.U)
-    io.coefficient_1    :=    (- io.pix_4 * 8.U + io.pix_6 * 8.U)
-    io.coefficient_2    :=    io.pix_4.asSInt * 16.S - io.pix_5.asSInt * 40.S + io.pix_6.asSInt * 32.S  - io.pix_7.asSInt * 8.S
+      // io.test_out_U_U            := io.test_in_U
+      // io.test_out_U_S             := io.test_in_U 
 
-    io.coefficient_3    :=   0.S - io.pix_4 * 8.S + io.pix_5.asSInt * 24.S - io.pix_6.asSInt * 24.S  + io.pix_7.asSInt * 8.S  
+      // io.test_out_S_U            := io.test_in_S.asUInt
+      // io.test_out_S_S             := io.test_in_S
+
+
+
+    io.coefficient_0    :=   (io.pix_5* 16.U).asSInt 
+    io.coefficient_1    :=    (io.pix_6 * 8.U- io.pix_4 * 8.U).asSInt 
+    io.coefficient_2    :=    (io.pix_4* 16.U - io.pix_5 * 40.U + io.pix_6 * 32.U  - io.pix_7* 8.U).asSInt 
+
+    io.coefficient_3    :=   (io.pix_5 * 24.U - io.pix_6 * 24.U  + io.pix_7 * 8.U  - io.pix_4 * 8.U) .asSInt 
     
-    io.coefficient_4    :=   0.S - io.pix_1.asSInt * 8.S + io.pix_9.asSInt * 8.S 
+    io.coefficient_4    :=     ( io.pix_9 * 8.U - io.pix_1 * 8.U).asSInt
 
-    io.coefficient_5    :=   0.S-io.pix_1.asSInt * 4.S - io.pix_4.asSInt * 4.S + io.pix_5.asSInt * 4.S + io.pix_10.asSInt * 4.S
+    io.coefficient_5    :=    (io.pix_5 * 4.U + io.pix_10 * 4.U -io.pix_1 * 4.U - io.pix_4 * 4.U).asSInt
    
-    io.coefficient_6    :=   io.pix_1.asSInt * 32.S - io.pix_2.asSInt * 20.S + io.pix_4.asSInt * 8.S  - io.pix_5.asSInt * 4.S   -  io.pix_6.asSInt * 4.S 
-                                               - io.pix_9.asSInt * 24.S  + io.pix_10.asSInt * 16.S - io.pix_11.asSInt * 4.S  
+    io.coefficient_6    :=  ( io.pix_1 * 32.U - io.pix_2 * 20.U + io.pix_4 * 8.U  - io.pix_5 * 4.U   -  io.pix_6 * 4.U  - io.pix_9 * 24.U  + io.pix_10 * 16.U - io.pix_11 * 4.U).asSInt
 
-    io.coefficient_7    :=    - io.pix_1.asSInt * 20.S + io.pix_2.asSInt * 12.S - io.pix_4.asSInt * 4.S  + io.pix_6.asSInt * 4.S   - io.pix_9.asSInt * 16.S - io.pix_10.asSInt * 12.S +  io.pix_11.asSInt * 4.S
+    io.coefficient_7    :=   (io.pix_2 * 12.U - io.pix_4 * 4.U  + io.pix_6  * 4.U   + io.pix_9  * 16.U - io.pix_10  * 12.U +  io.pix_11  * 4.U  - io.pix_1  * 20.U).asSInt
 
-    io.coefficient_8    :=    - io.pix_1.asSInt * 16.S - io.pix_5.asSInt * 40.S + io.pix_9.asSInt * 32.S  - io.pix_13.asSInt * 8.S   
+    io.coefficient_8    :=    (io.pix_9  * 32.U  - io.pix_13  * 8.U +  io.pix_1  * 16.U - io.pix_5  * 40.U).asSInt   
     
-    io.coefficient_9    :=    - io.pix_1.asSInt * 8.S + io.pix_4.asSInt * 32.S - io.pix_5.asSInt * 4.S  - io.pix_6.asSInt * 24.S   - io.pix_8.asSInt * 20.S - io.pix_9.asSInt * 4.S +  io.pix_10.asSInt * 16.S -io.pix_14.asSInt * 4.S
+    io.coefficient_9    :=    (io.pix_1  * 8.U + io.pix_4  * 32.U - io.pix_5  * 4.U  - io.pix_6  * 24.U   - io.pix_8  * 20.U - io.pix_9  * 4.U +  io.pix_10  * 16.U -io.pix_14  * 4.U ).asSInt   
    
-    io.coefficient_10    :=    - io.pix_1.asSInt * 64.S + io.pix_2.asSInt * 40.S - io.pix_4.asSInt * 64.S  + io.pix_5.asSInt * 96.S   - io.pix_6.asSInt * 68.S + io.pix_7.asSInt * 24.S +  io.pix_8.asSInt * 40.S -io.pix_9.asSInt * 68.S+ io.pix_10.asSInt * 68.S - io.pix_11.asSInt * 16.S + io.pix_13.asSInt * 24.S  - io.pix_14.asSInt * 16.S   + io.pix_15.asSInt * 4.S 
+    io.coefficient_10    :=   ( io.pix_2  * 40.U - io.pix_1  * 64.U - io.pix_4  * 64.U  + io.pix_5  * 96.U   - io.pix_6  * 68.U + io.pix_7  * 24.U +  io.pix_8  * 40.U -io.pix_9  * 68.U+ io.pix_10  * 68.U - io.pix_11  * 16.U + io.pix_13  * 24.U  - io.pix_14  * 16.U   + io.pix_15  * 4.U ).asSInt
     
-    io.coefficient_11    :=     io.pix_1.asSInt * 40.S - io.pix_2.asSInt * 24.S + io.pix_4.asSInt * 32.S  -  io.pix_5.asSInt * 52.S   + io.pix_6.asSInt * 52.S - io.pix_7.asSInt * 24.S -  io.pix_8.asSInt * 20.S + io.pix_9.asSInt * 40.S
-                                                - io.pix_10.asSInt * 52.S + io.pix_11.asSInt * 16.S - io.pix_13.asSInt * 16.S  + io.pix_14.asSInt * 12.S   -  io.pix_15.asSInt * 4.S 
+    io.coefficient_11    :=     (io.pix_1  * 40.U - io.pix_2  * 24.U + io.pix_4  * 32.U  -  io.pix_5  * 52.U   + io.pix_6  * 52.U - io.pix_7  * 24.U -  io.pix_8  * 20.U + io.pix_9  * 40.U
+                                                - io.pix_10  * 52.U + io.pix_11  * 16.U - io.pix_13  * 16.U  + io.pix_14  * 12.U   -  io.pix_15  * 4.U ).asSInt   
 
-    io.coefficient_12    :=    - io.pix_1.asSInt * 8.S + io.pix_5.asSInt * 24.S - io.pix_9.asSInt * 24.S  +  io.pix_13.asSInt * 8.S 
+    io.coefficient_12    :=    ( io.pix_5  * 24.U - io.pix_9  * 24.U  +  io.pix_13  * 8.U  - io.pix_1  * 8.U).asSInt
 
-    io.coefficient_13    :=    - io.pix_1.asSInt * 4.S + io.pix_4.asSInt * 20.S + io.pix_6.asSInt * 16.S  +  io.pix_8.asSInt * 12.S  +  io.pix_9.asSInt * 4.S -  io.pix_10.asSInt * 12.S +  io.pix_14.asSInt * 4.S
+    io.coefficient_13    :=    ( io.pix_6  * 16.U  +  io.pix_8  * 12.U  +  io.pix_9  * 4.U -  io.pix_10  * 12.U +  io.pix_14  * 4.U- io.pix_1  * 4.U - io.pix_4  * 20.U).asSInt
 
-    io.coefficient_14    :=    io.pix_1.asSInt * 32.S - io.pix_3.asSInt * 20.S + io.pix_4.asSInt * 40.S  -  io.pix_5.asSInt * 52.S  +  io.pix_6.asSInt * 40.S -  io.pix_7.asSInt * 16.S -  io.pix_8.asSInt * 24.S  +  io.pix_9.asSInt * 52.S                               
-                                                 -io.pix_10.asSInt * 52.S + io.pix_11.asSInt * 12.S - io.pix_13.asSInt * 24.S  +  io.pix_14.asSInt * 52.S  - io.pix_15.asSInt * 4.S        
-    io.coefficient_15    :=    -io.pix_1.asSInt * 20.S + io.pix_2.asSInt * 12.S - io.pix_4.asSInt * 20.S  +  io.pix_5.asSInt * 28.S  -  io.pix_6.asSInt * 32.S +  io.pix_7.asSInt * 16.S +  io.pix_8.asSInt * 12.S  -  io.pix_9.asSInt * 32.S +io.pix_10.asSInt * 40.S - io.pix_11.asSInt * 12.S - io.pix_13.asSInt * 16.S  -  io.pix_14.asSInt * 12.S  + io.pix_15.asSInt * 4.S        
+    io.coefficient_14    :=   ( io.pix_1  * 32.U - io.pix_2  * 20.U + io.pix_4  * 40.U  -  io.pix_5  * 52.U  +  io.pix_6  * 40.U -  io.pix_7  * 16.U -  io.pix_8  * 24.U  +  io.pix_9  * 52.U  - io.pix_10  * 52.U + io.pix_11  * 12.U - io.pix_13  * 24.U  +  io.pix_14  * 16.U  - io.pix_15  * 4.U).asSInt      
+   
+
+
+
+    io.coefficient_15    :=    ( io.pix_2  * 12.U  - io.pix_1  * 20.U - io.pix_4  * 20.U  +  io.pix_5  * 28.U  -  io.pix_6  * 32.U +  io.pix_7  * 16.U +  io.pix_8  * 12.U  -  io.pix_9  * 32.U +io.pix_10  * 40.U - io.pix_11  * 12.U + io.pix_13  * 16.U  -  io.pix_14  * 12.U  + io.pix_15  * 4.U).asSInt        
+
+
+
 }
 object coefficient_compute extends App {
   chisel3.Driver.execute(args, () => new coefficient_compute_spline())
@@ -101,6 +125,11 @@ class coefficient_compute_test (dut:coefficient_compute_spline) extends PeekPoke
         poke(dut.io.pix_15,254.U)
         // poke(dut.io.pix_2,1.U)
         // poke(dut.io.pix_1,1.U)
+
+
+        // poke(dut.io.test_in_U,5.U)
+        // poke(dut.io.test_in_S,-5.S)
+
 
         step(5)
 
@@ -144,5 +173,5 @@ object coefficient_test extends App {
 // -64
 // 8
 // 140
-// -68
+// -68  现在的数字是8124
 

@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckTypes$InvalidConnect:  @[coefficient_compute.scala 68:25]: [module coefficient_compute_spline]  Type mismatch in 'io.coefficient_0 <= _T_3'.[0m
+[0m[[0m[31merror[0m] [0m[0m  io.coefficient_0: UInt<32>[0m
+[0m[[0m[31merror[0m] [0m[0m  _T_3: SInt<13>[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckTypes$InvalidConnect:  @[coefficient_compute.scala 69:25]: [module coefficient_compute_spline]  Type mismatch in 'io.coefficient_1 <= _T_8'.[0m
+[0m[[0m[31merror[0m] [0m[0m  io.coefficient_1: UInt<32>[0m
+[0m[[0m[31merror[0m] [0m[0m  _T_8: SInt<12>[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckTypes$InvalidConnect:  @[coefficient_compute.scala 68:25]: [module coefficient_compute_spline]  Type mismatch in 'io.coefficient_0 <= _T_3'.[0m
+[0m[[0m[31merror[0m] [0m[0m  io.coefficient_0: UInt<32>[0m
+[0m[[0m[31merror[0m] [0m[0m  _T_3: SInt<13>[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckTypes$InvalidConnect:  @[coefficient_compute.scala 69:25]: [module coefficient_compute_spline]  Type mismatch in 'io.coefficient_1 <= _T_8'.[0m
+[0m[[0m[31merror[0m] [0m[0m  io.coefficient_1: UInt<32>[0m
+[0m[[0m[31merror[0m] [0m[0m  _T_8: SInt<12>[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m
