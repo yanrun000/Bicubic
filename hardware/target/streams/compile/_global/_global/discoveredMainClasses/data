@@ -1,1 +1,1 @@
-["bicubic.Fetch_pixel","bicubic.coefficient_compute","bicubic.coefficient_test","hardfloat.FIFOtest"]
+["bicubic.Fetch_pixel","bicubic.coefficient_compute","bicubic.coefficient_test","bicubic.interpolation_compute_spline","bicubic.interpolation_test","hardfloat.FIFOtest"]

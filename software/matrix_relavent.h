@@ -1,4 +1,4 @@
-#include "./bmp_reader/bmp_reader.h"
+#include "./bmp_reader.h"
 #ifndef min
 #define min(a,b)            (((a) < (b)) ? (a) : (b))
 #endif
@@ -102,9 +102,9 @@ unsigned char interpolation_compute_spline(float x, float y){
 
 
 void bicubic_interpolation(RGB * pixel_old, RGBa * pixel_new){
-    for (int rgb=0; rgb<3; ){
-        for (int j=1; j<(540-2); j++){      // (i,j) represent location of orgin img.
-            for (int i=1; i< (960-2); i++){
+    for (int rgb=0; rgb<1; ){
+        for (int j=1; j<2; j++){      // (i,j) represent location of orgin img.
+            for (int i=1; i<2; i++){
                 memcpy(pixel_matrix , (unsigned char []){
 *((unsigned char *)(&pixel_old[(i-1)+((j-1)*960)])+rgb), *((unsigned char *)(&pixel_old[(i)+((j-1)*960)])+ rgb), *((unsigned char *)(&pixel_old[(i+1)+((j-1)*960)])+ rgb), *((unsigned char *)(&pixel_old[(i+2)+((j-1)*960)])+ rgb),
 *((unsigned char *)(&pixel_old[(i-1)+((j  )*960)])+rgb), *((unsigned char *)(&pixel_old[(i)+((j  )*960)])+ rgb), *((unsigned char *)(&pixel_old[(i+1)+((j  )*960)])+ rgb), *((unsigned char *)(&pixel_old[(i+2)+((j  )*960)])+ rgb),
@@ -114,14 +114,18 @@ void bicubic_interpolation(RGB * pixel_old, RGBa * pixel_new){
                 coefficient_init();
                 #ifdef SPLINE
                 coefficient_compute_spline();
+                for (int n= 0; n<= 15; n++){
+                    printf("%d\n",coefficient[n]);
+                }
                 #else
                 coefficient_compute();
                 #endif
                 unsigned char temp;
-                for(int y=0;y<=3;y++){
-                    for(int x=0;x<=3;x++){
+                for(int y=2;y<=2;y++){
+                    for(int x=2;x<=2;x++){
                 #ifdef SPLINE
                         *(((unsigned char *)(&pixel_new[(i*4+x + 2)+((j*4+y + 2)*3840)])) + rgb) = interpolation_compute_spline(0.25*x,0.25*y);
+                        printf("spline= %d",interpolation_compute_spline(0.25*x,0.25*y));
                     if(i==960-3){
                         for(int y_=0;y_<=3;y_++){
                         int x_=4;

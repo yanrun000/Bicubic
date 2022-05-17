@@ -1,33 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0mjava.lang.Exception: Failed to elaborate Chisel circuit[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.iotesters.setupVerilatorBackend$.apply(VerilatorBackend.scala:289)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.iotesters.Driver$.$anonfun$execute$2(Driver.scala:56)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.java:23)[0m
-[0m[[0m[31merror[0m] [0m[0m	at logger.Logger$.$anonfun$makeScope$2(Logger.scala:166)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)[0m
-[0m[[0m[31merror[0m] [0m[0m	at logger.Logger$.makeScope(Logger.scala:164)[0m
-[0m[[0m[31merror[0m] [0m[0m	at logger.Logger$.makeScope(Logger.scala:127)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.iotesters.Driver$.$anonfun$execute$1(Driver.scala:39)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.java:23)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.iotesters.Driver$.execute(Driver.scala:39)[0m
-[0m[[0m[31merror[0m] [0m[0m	at chisel3.iotesters.Driver$.execute(Driver.scala:103)[0m
-[0m[[0m[31merror[0m] [0m[0m	at bicubic.coefficient_test$.delayedEndpoint$bicubic$coefficient_test$1(coefficient_compute.scala:140)[0m
-[0m[[0m[31merror[0m] [0m[0m	at bicubic.coefficient_test$delayedInit$body.apply(coefficient_compute.scala:139)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp(Function0.scala:39)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp$(Function0.scala:39)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:17)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.App.$anonfun$main$1$adapted(App.scala:80)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:431)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.App.main(App.scala:80)[0m
-[0m[[0m[31merror[0m] [0m[0m	at scala.App.main$(App.scala:78)[0m
-[0m[[0m[31merror[0m] [0m[0m	at bicubic.coefficient_test$.main(coefficient_compute.scala:139)[0m
-[0m[[0m[31merror[0m] [0m[0m	at bicubic.coefficient_test.main(coefficient_compute.scala)[0m
-[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
-[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
-[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[0m
-[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Method.java:498)[0m
-[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.invokeMain(Run.scala:143)[0m
-[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.execute$1(Run.scala:93)[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.ClassNotFoundException: hardfloat.interpolation_test[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.ManagedClassLoader.findClass(ManagedClassLoader.java:102)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Class.forName0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Class.forName(Class.java:348)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.getMainMethod(Run.scala:160)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.execute$1(Run.scala:92)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sbt.Run.$anonfun$runWithLoader$5(Run.scala:120)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sbt.Run$.executeSuccess(Run.scala:186)[0m
 [0m[[0m[31merror[0m] [0m[0m	at sbt.Run.runWithLoader(Run.scala:120)[0m
@@ -39,4 +18,4 @@
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Thread.java:748)[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) java.lang.Exception: Failed to elaborate Chisel circuit[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) java.lang.ClassNotFoundException: hardfloat.interpolation_test[0m
