@@ -85,6 +85,9 @@ void main(int argc, char** argv){
         }
     }
     pixel_new = pixel_new_backup;
+    pixel_new+=(3840*2);
+    pixel_new+=2;
+
     for (int i =0; i<2160;i+=4){        // put old pixels into new image
         for(int j=0; j<3840;j+=4){
             pixel_new->rgb = *pixel;

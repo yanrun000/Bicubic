@@ -44,7 +44,7 @@ VM_USER_CLASSES = \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	/home/workspace/JCS/Bicubic/hardware/test_run_dir/bicubic.coefficient_test505618144 \
+	/home/workspace/JCS/Bicubic/hardware/test_run_dir/bicubic.coefficient_test159905709 \
 
 
 ### Default rules...
@@ -56,7 +56,7 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-coefficient_compute_spline-harness.o: /home/workspace/JCS/Bicubic/hardware/test_run_dir/bicubic.coefficient_test505618144/coefficient_compute_spline-harness.cpp
+coefficient_compute_spline-harness.o: /home/workspace/JCS/Bicubic/hardware/test_run_dir/bicubic.coefficient_test159905709/coefficient_compute_spline-harness.cpp
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)

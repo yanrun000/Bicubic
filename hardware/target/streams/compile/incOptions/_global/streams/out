@@ -19,14 +19,16 @@
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_test.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_test.class[0m
-[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_spline$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRolling back changes to class files.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRestoring class files: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	coefficient_test$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_spline.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	coefficient_test$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	coefficient_test$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_spline.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_spline$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	coefficient_test$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute_test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	coefficient_compute.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/workspace/JCS/Bicubic/hardware/target/scala-2.12/classes.bak[0m

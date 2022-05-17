@@ -27,6 +27,8 @@ class coefficient_compute_spline extends Module{
         val pix_13 = Input(UInt(8.W))
         val pix_14 = Input(UInt(8.W))
         val pix_15 = Input(UInt(8.W))
+        val i_in      = Input(UInt(8.W))
+        val j_in      = Input(UInt(8.W))
 //这里暂定32位，到时候再说，可能16位就够用了
         val coefficient_0   = Output(SInt(32.W))
         val coefficient_1   = Output(SInt(32.W))
@@ -44,7 +46,8 @@ class coefficient_compute_spline extends Module{
         val coefficient_13 = Output(SInt(32.W))
         val coefficient_14 = Output(SInt(32.W))
         val coefficient_15 = Output(SInt(32.W))
-
+        val i_out                   = Output(UInt(8.W))
+        val j_out                   = Output(UInt(8.W))
 
         // val test_in_U                      = Input(UInt(5.W))
         // val test_in_S                       = Input(SInt(5.W))
@@ -95,9 +98,11 @@ class coefficient_compute_spline extends Module{
     io.coefficient_14    :=   ( io.pix_1  * 32.U - io.pix_2  * 20.U + io.pix_4  * 40.U  -  io.pix_5  * 52.U  +  io.pix_6  * 40.U -  io.pix_7  * 16.U -  io.pix_8  * 24.U  +  io.pix_9  * 52.U  - io.pix_10  * 52.U + io.pix_11  * 12.U - io.pix_13  * 24.U  +  io.pix_14  * 16.U  - io.pix_15  * 4.U).asSInt      
    
 
+    io.coefficient_15  := ( 0.U-32.U*io.pix_9+io.pix_2*12.U - io.pix_1*20.U-20.U * io.pix_4 +28.U * io.pix_5 -32.U * io.pix_6 +16.U * io.pix_7+12.U*io.pix_8 
+                                           +40.U*io.pix_10-12.U*io.pix_11+16.U*io.pix_13-12.U*io.pix_14+4.U * io.pix_15).asSInt   
 
-
-    io.coefficient_15    :=    ( io.pix_2  * 12.U  - io.pix_1  * 20.U - io.pix_4  * 20.U  +  io.pix_5  * 28.U  -  io.pix_6  * 32.U +  io.pix_7  * 16.U +  io.pix_8  * 12.U  -  io.pix_9  * 32.U +io.pix_10  * 40.U - io.pix_11  * 12.U + io.pix_13  * 16.U  -  io.pix_14  * 12.U  + io.pix_15  * 4.U).asSInt        
+    io.i_out            := io.i_in
+    io.j_out            := io.j_in
 
 
 

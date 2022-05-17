@@ -132,7 +132,7 @@ void vl_finish(const char* filename, int linenum, const char* hier) {
 int main(int argc, char **argv, char **env) {
     Verilated::commandArgs(argc, argv);
     Vcoefficient_compute_spline* top = new Vcoefficient_compute_spline;
-    std::string vcdfile = "test_run_dir/bicubic.coefficient_test505618144/coefficient_compute_spline.vcd";
+    std::string vcdfile = "test_run_dir/bicubic.coefficient_test159905709/coefficient_compute_spline.vcd";
     std::vector<std::string> args(argv+1, argv+argc);
     std::vector<std::string>::const_iterator it;
     for (it = args.begin() ; it != args.end() ; it++) {

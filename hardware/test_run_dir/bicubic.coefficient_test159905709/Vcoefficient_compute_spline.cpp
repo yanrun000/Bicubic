@@ -208,25 +208,24 @@ VL_INLINE_OPT void Vcoefficient_compute_spline::_combo__TOP__1(Vcoefficient_comp
 		       + (0xfffU & ((IData)(0xcU) * (IData)(vlTOPp->io_pix_14)))) 
 		      - (0x7ffU & ((IData)(vlTOPp->io_pix_15) 
 				   << 2U))));
-    vlTOPp->coefficient_compute_spline__DOT___T_304 
-	= (0x3fffU & ((((((((((0x1fffU & ((((0xfffU 
-					     & ((IData)(0xcU) 
-						* (IData)(vlTOPp->io_pix_2))) 
-					    - ((IData)(0x14U) 
-					       * (IData)(vlTOPp->io_pix_1))) 
-					   - ((IData)(0x14U) 
-					      * (IData)(vlTOPp->io_pix_4))) 
-					  + ((IData)(0x1cU) 
-					     * (IData)(vlTOPp->io_pix_5)))) 
-			      - ((IData)(vlTOPp->io_pix_6) 
-				 << 5U)) + (0x1fffU 
-					    & ((IData)(vlTOPp->io_pix_7) 
-					       << 4U))) 
-			    + (0xfffU & ((IData)(0xcU) 
-					 * (IData)(vlTOPp->io_pix_8)))) 
-			   - ((IData)(vlTOPp->io_pix_9) 
-			      << 5U)) + ((IData)(0x28U) 
-					 * (IData)(vlTOPp->io_pix_10))) 
+    vlTOPp->coefficient_compute_spline__DOT___T_306 
+	= (0x3fffU & ((((((((((((VL_NEGATE_I(((IData)(vlTOPp->io_pix_9) 
+					      << 5U)) 
+				 + (0xfffU & ((IData)(0xcU) 
+					      * (IData)(vlTOPp->io_pix_2)))) 
+				- (0x1fffU & ((IData)(0x14U) 
+					      * (IData)(vlTOPp->io_pix_1)))) 
+			       - (0x1fffU & ((IData)(0x14U) 
+					     * (IData)(vlTOPp->io_pix_4)))) 
+			      + (0x1fffU & ((IData)(0x1cU) 
+					    * (IData)(vlTOPp->io_pix_5)))) 
+			     - ((IData)(vlTOPp->io_pix_6) 
+				<< 5U)) + (0x1fffU 
+					   & ((IData)(vlTOPp->io_pix_7) 
+					      << 4U))) 
+			   + (0xfffU & ((IData)(0xcU) 
+					* (IData)(vlTOPp->io_pix_8)))) 
+			  + ((IData)(0x28U) * (IData)(vlTOPp->io_pix_10))) 
 			 - (0xfffU & ((IData)(0xcU) 
 				      * (IData)(vlTOPp->io_pix_11)))) 
 			+ (0x1fffU & ((IData)(vlTOPp->io_pix_13) 
@@ -313,10 +312,10 @@ VL_INLINE_OPT void Vcoefficient_compute_spline::_combo__TOP__1(Vcoefficient_comp
 				 | (IData)(vlTOPp->coefficient_compute_spline__DOT___T_197));
     vlTOPp->io_coefficient_15 = ((0xffffc000U & (VL_NEGATE_I((IData)(
 								     (1U 
-								      & ((IData)(vlTOPp->coefficient_compute_spline__DOT___T_304) 
+								      & ((IData)(vlTOPp->coefficient_compute_spline__DOT___T_306) 
 									 >> 0xdU)))) 
 						 << 0xeU)) 
-				 | (IData)(vlTOPp->coefficient_compute_spline__DOT___T_304));
+				 | (IData)(vlTOPp->coefficient_compute_spline__DOT___T_306));
     vlTOPp->coefficient_compute_spline__DOT___T_67 
 	= (0x3fffU & (((((((IData)(vlTOPp->coefficient_compute_spline__DOT___T_48) 
 			   + (0xfffU & ((IData)(vlTOPp->io_pix_4) 
@@ -462,6 +461,6 @@ void Vcoefficient_compute_spline::_ctor_var_reset() {
     coefficient_compute_spline__DOT___T_208 = VL_RAND_RESET_I(13);
     coefficient_compute_spline__DOT___T_228 = VL_RAND_RESET_I(13);
     coefficient_compute_spline__DOT___T_266 = VL_RAND_RESET_I(14);
-    coefficient_compute_spline__DOT___T_304 = VL_RAND_RESET_I(14);
+    coefficient_compute_spline__DOT___T_306 = VL_RAND_RESET_I(14);
     __Vm_traceActivity = VL_RAND_RESET_I(32);
 }

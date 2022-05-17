@@ -73,7 +73,7 @@ VL_MODULE(Vcoefficient_compute_spline) {
     VL_SIG16(coefficient_compute_spline__DOT___T_208,12,0);
     VL_SIG16(coefficient_compute_spline__DOT___T_228,12,0);
     VL_SIG16(coefficient_compute_spline__DOT___T_266,13,0);
-    VL_SIG16(coefficient_compute_spline__DOT___T_304,13,0);
+    VL_SIG16(coefficient_compute_spline__DOT___T_306,13,0);
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
